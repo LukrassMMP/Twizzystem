@@ -50,15 +50,27 @@ Die ersten Gehversuche (abgsehen von HbbTV) wurden mit reinem PHP und JavaScript
 Ein weiterer Versuch wurde mit [NUXTjs](https://nuxtjs.org) und Wordpress vorgenommen. Die Fragen und Antworten sollten via Wordpress eingetragen werden können. Somit soll die Planung einer neuen Show einfacher ablaufen. Dennoch wurde diese Variante verworfen, da die Variante mit reinem VUE.js schlicht einfacher funktionierte (und das headless Wordpress auch mit reinem Vue.js umgesetzt werden kann). Sicherlich war auch die Tatsache der verfügbaren Unterlagen/Dokumentaionen und Experten ausschlaggebend, welche mich bei Vue.js besser unterstützen konnten als bei NUXTjs.
 #### NODE
 Bei der Recherche wurde immer wieder empfohlen, mit [NODE](https://nodejs.org/en/) zu arbeiten. Auch ich versuchte mich an NODE, musste mich jedoch davon distanzieren, da das Aufwand-Nutzen-Verhältnis nicht stimmig war und meine nötigen Funktionen der Website auch mit einfacher Mitteln erreicht werden können.
+Bei der Recherche wurde immer wieder empfohlen, mit [NODE](https://nodejs.org/en/) zu arbeiten. Auch ich versuchte mich an NODE, musste mich jedoch davon distanzieren, da das Aufwand-Nutzen-Verhältnis nicht stimmig war und meine nötigen Funktionen der Website auch mit einfacher Mitteln erreicht werden können. <br>
+Einzig der WebSocket-Server läuft mit Node, was aktuell noch Probleme bereitet. Lokal auf dem Rechner läuft der Node-Server einwandfrei, jedoch ist das Hosten eines solchen Servers nicht ganz einfach um muss noch erarbeitet werden.
 
 ### Verwendete Technologien
 #### Vue.js
 Schlussendlich entschied ich mich, das JavaScript-Webframework [Vue.js](https://vuejs.org) zu verwenden. Dies bietet alle nötigen Funktionen und bleibt dennoch übersichtlich und vergleichsweise simpel. Zudem ist die vorhandene Dokumentation von Vue.js vorbildlich und ich konnte auch auf die Hilfe einiger Experten zurückgreifen. <br>
-Zudem gibt es für Vue.js auch etliche zusätzliche Libraries/Module, welche einfach implementiert werden können:
+Zudem gibt es für Vue.js auch etliche zusätzliche Libraries/Module/Frameworks, welche einfach implementiert werden können:
 * [__Router__](https://router.vuejs.org) <br>
   Mit Router ist es möglich, einfach zwischen den einzelnen Views der Website zu wechseln, ohne das diese neu lädt (Single Page Application). Dies war wichtig, da Twizzystem mit einigen lokal beim User gespeicherten Variablen arbeitet, welche beim Neuladen der Seite verloren gehen würden. Mit Router ist es möglich, neue Views zu laden ohne dabei die lokalen (mit VUEX) gespeicherten Variablen zu verlieren.
 * [__Vuex__](https://vuex.vuejs.org) <br>
-
+  VUEX ermöglicht es, Variablen zu erstellen, welche von allen Komponenten (Views) der Website abgerufen werden können. Bespielsweise kann der Nutzername beim Login in einer "globalen" Variable gespeichert werden und ist somit in jeder View verfügbar.
 * [__Axios__](https://axios.nuxtjs.org) <br>
+  Mit Axios wird die Verbindung  mit der Datenbank gehändelt. Dank Axios können POST- und GET-Abfragen (mit oder ohne Variablen) ganz einfach an die Datenbank gesendet werden. Die Datenbank verarbeitet die Anfrage und schickt die entsprechenden Einträge zurück.
 * [__SocketIO__](https://socket.io) <br>
+  SocketIO ermöglicht genau eine bidirektionale Kommunikation mit dem Websocket-Server und somit eine Echtzeitkommunikation zwischen den Clients (und dem Host)
 * [__Bootstrap__](https://bootstrap-vue.js.org) <br>
+  Bootstrap ist ein Frontend-CSS-Framework mit dessen Hilfe ich die Gestaltung der Website vorgenommen habe.
+
+### Technische Herausforderungen
+#### Autoplay von Videos
+Das erste Problem, welches auftauchte, war die Tatsache, dass die meisten Browser die Autoplay-Funktion von Videos blockieren. Um dies zu umgehen, wird das Video auf der Startseite stummgeschalten. Dadurch wird die Autoplay-Sperre der Browser umgangen und das Video wird abgespielt (wenn auch stumm). Sobald sich der User eigeloggt hat, wird die Stummschaltung deaktiviert und das Video läuft mit Ton.
+#### Live Interaktionen
+Eine Website mit Live-Interaktionen zu versetzten stellte sich als anspruchsvoller heraus als zuerst gedacht. Was bei einem Live-Quiz natürlich wichtig ist, ist die Tatsache, dass alle Teilnehmer zur selben Zeit bei dem Quiz dabei sind. Dass heisst, das Quiz muss bei allen Teilnehmern zur selben Zeit gestartet werden. Und die zweiter Frage muss bei allen teilnehmern zur selben Zeit erscheinen. Und natürlich müssen alle die selbe Zeitspanne zur Verfügung haben, diese Frage auch zu beantworten. <br>
+Um die zu ermöglichen, braucht es einen Admin/Host, welcher die Show starten bzw. weiterführen kann. Dass heisst, ein Host muss alle Client ansprechen und weiterleiten können. Dies funktioniert mithilfe des [Websocket-Protokolls](https://de.wikipedia.org/wiki/WebSocket), einem auf TCP basierenden Netzwerkprotokolls. Dieses ermöglicht eine bidirektionale Verbindung zwischen dem Client und dem Websocket-Server. Damit kann eine von einem Client verfasste Nachricht automatisch an alle anderen Clients (zeitgleich) weitergeleitet werden. Diese Funktion machte ich mir zu nutzen, um mittels einer bestimmten Nachricht das Quiz auf allen Clients zeitgleich zu starten.  <br>
