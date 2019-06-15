@@ -49,7 +49,6 @@ Die ersten Gehversuche (abgsehen von HbbTV) wurden mit reinem PHP und JavaScript
 #### NUXTjs & Headless Wordpress
 Ein weiterer Versuch wurde mit [NUXTjs](https://nuxtjs.org) und Wordpress vorgenommen. Die Fragen und Antworten sollten via Wordpress eingetragen werden können. Somit soll die Planung einer neuen Show einfacher ablaufen. Dennoch wurde diese Variante verworfen, da die Variante mit reinem VUE.js schlicht einfacher funktionierte (und das headless Wordpress auch mit reinem Vue.js umgesetzt werden kann). Sicherlich war auch die Tatsache der verfügbaren Unterlagen/Dokumentaionen und Experten ausschlaggebend, welche mich bei Vue.js besser unterstützen konnten als bei NUXTjs.
 #### NODE
-Bei der Recherche wurde immer wieder empfohlen, mit [NODE](https://nodejs.org/en/) zu arbeiten. Auch ich versuchte mich an NODE, musste mich jedoch davon distanzieren, da das Aufwand-Nutzen-Verhältnis nicht stimmig war und meine nötigen Funktionen der Website auch mit einfacher Mitteln erreicht werden können.
 Bei der Recherche wurde immer wieder empfohlen, mit [NODE](https://nodejs.org/en/) zu arbeiten. Auch ich versuchte mich an NODE, musste mich jedoch davon distanzieren, da das Aufwand-Nutzen-Verhältnis nicht stimmig war und meine nötigen Funktionen der Website auch mit einfacher Mitteln erreicht werden können. <br>
 Einzig der WebSocket-Server läuft mit Node, was aktuell noch Probleme bereitet. Lokal auf dem Rechner läuft der Node-Server einwandfrei, jedoch ist das Hosten eines solchen Servers nicht ganz einfach um muss noch erarbeitet werden.
 
