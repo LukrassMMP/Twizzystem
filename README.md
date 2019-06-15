@@ -1,29 +1,7 @@
-# twizzy
+# Interaktionssystem "Twizzystem"
 
-## Project setup
+## Beschreibung
 ```
-npm install
+Das Interaktionssystem "Twizzystem" wurde im Rahmen meiner Bachelorarbeit des Studiengangs "Multimedia-Production" an der HTW Chur erstellt. Es dienst als Interaktionssystem hinter dem, ebenfalls für die Bachelorarbeit erstellten, Live-Quiz namens "Twizzy".
+Das System soll eine möglichst einfache, intuitive Interaktion bieten, um mit einem per Streaming-Dienst übertragenen Live-Show zu interagieren. Die Nutzer/Zuschauer bleiben dabei stets anonym und können das System geräteunabhängig nutzen. 
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
