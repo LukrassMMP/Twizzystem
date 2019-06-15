@@ -67,9 +67,19 @@ Zudem gibt es für Vue.js auch etliche zusätzliche Libraries/Module/Frameworks,
 * [__Bootstrap__](https://bootstrap-vue.js.org) <br>
   Bootstrap ist ein Frontend-CSS-Framework mit dessen Hilfe ich die Gestaltung der Website vorgenommen habe.
 
+### Aufbau der Entwicklungsumgebung
+#### Client-Side (Vue.js)
+
+### WebSocket-Server (Host)
+
+### Datenbank
+
 ### Technische Herausforderungen
 #### Autoplay von Videos
 Das erste Problem, welches auftauchte, war die Tatsache, dass die meisten Browser die Autoplay-Funktion von Videos blockieren. Um dies zu umgehen, wird das Video auf der Startseite stummgeschalten. Dadurch wird die Autoplay-Sperre der Browser umgangen und das Video wird abgespielt (wenn auch stumm). Sobald sich der User eigeloggt hat, wird die Stummschaltung deaktiviert und das Video läuft mit Ton.
+#### Verbindung zur Datenbank mit Vue.js
+Das Arbeiten mit Vue.js macht sehr viel Spass - sofern man die Syntax verstanden hat. Doch dank der hilfreichen und umfangreichen Dokumentation fällt die einarbeit meist ziemlich gut. Bei der Kommunikation mit der Datenbank hatte ich zuerst Probleme. Schnell war mir klar, dass ich dafür Axios einsetzen muss, jedoch gelang dies mit nicht auf Anhieb.
+Dank [dieses Tutorials](https://www.techiediaries.com/vuejs-php-mysql-rest-crud-api-tutorial/) habe ich dann das System/die Syntax dann doch noch verstanden und konnte die Datenbankverbindung einrichten. 
 #### Live Interaktionen
-Eine Website mit Live-Interaktionen zu versetzten stellte sich als anspruchsvoller heraus als zuerst gedacht. Was bei einem Live-Quiz natürlich wichtig ist, ist die Tatsache, dass alle Teilnehmer zur selben Zeit bei dem Quiz dabei sind. Dass heisst, das Quiz muss bei allen Teilnehmern zur selben Zeit gestartet werden. Und die zweiter Frage muss bei allen teilnehmern zur selben Zeit erscheinen. Und natürlich müssen alle die selbe Zeitspanne zur Verfügung haben, diese Frage auch zu beantworten. <br>
-Um die zu ermöglichen, braucht es einen Admin/Host, welcher die Show starten bzw. weiterführen kann. Dass heisst, ein Host muss alle Client ansprechen und weiterleiten können. Dies funktioniert mithilfe des [Websocket-Protokolls](https://de.wikipedia.org/wiki/WebSocket), einem auf TCP basierenden Netzwerkprotokolls. Dieses ermöglicht eine bidirektionale Verbindung zwischen dem Client und dem Websocket-Server. Damit kann eine von einem Client verfasste Nachricht automatisch an alle anderen Clients (zeitgleich) weitergeleitet werden. Diese Funktion machte ich mir zu nutzen, um mittels einer bestimmten Nachricht das Quiz auf allen Clients zeitgleich zu starten.  <br>
+Eine Website mit Live-Interaktionen zu versetzten stellte sich als anspruchsvoller heraus als zuerst gedacht. Was bei einem Live-Quiz natürlich wichtig ist, ist die Tatsache, dass alle Teilnehmer zur selben Zeit bei dem Quiz dabei sind. Dass heisst, das Quiz muss bei allen Teilnehmern zur selben Zeit gestartet werden. Und die zweite Frage muss bei allen Teilnehmern zur selben Zeit erscheinen. Und natürlich müssen alle die selbe Zeitspanne zur Verfügung haben, diese Frage auch zu beantworten. <br>
+Um die zu ermöglichen, braucht es einen Admin/Host, welcher die Show starten bzw. weiterführen kann. Dass heisst, ein Host muss alle Client ansprechen und weiterleiten können. Das funktioniert mithilfe des [Websocket-Protokolls](https://de.wikipedia.org/wiki/WebSocket), einem auf TCP basierenden Netzwerkprotokolls. Dieses ermöglicht eine bidirektionale Verbindung zwischen dem Client und dem Websocket-Server. Damit kann eine von einem Client verfasste Nachricht automatisch an alle anderen Clients (zeitgleich) weitergeleitet werden. Diese Funktion machte ich mir zu nutzen, um mittels einer bestimmten Nachricht das Quiz auf allen Clients zeitgleich zu starten.<br>
