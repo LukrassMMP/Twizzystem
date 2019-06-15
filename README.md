@@ -7,7 +7,7 @@ Das System soll eine möglichst einfache, intuitive Interaktion bieten, um mit e
 
 ## Konzeption & Testing
 
-###Experteninterview
+__Experteninterview__
 Um die Anforderungen an ein Interaktionssystem für eine Live-Show zu bestimmen, wurden im Rahmen der Bachelorarbeit einige Experteninterviews durchgeführt. Aus diesen Experteninterviews konnten erste Erkenntnisse gezogen werden:
 * __Einfachheit__
   "Es muss einfach sein zum Nutzen, es muss direkt nedem dem Stream sein und nicht noch auf einer externen Seite" _Ronny Baumann - MYI Entertainment_
@@ -15,3 +15,12 @@ Um die Anforderungen an ein Interaktionssystem für eine Live-Show zu bestimmen,
   "Nicht nur mitgehörig, es geht viel weiter: mitbestimmen" _Dominik Stroppel - SRF, Leiter Digitales Angebot_
 * __Spielerisch__
   "Man muss irgendein spielerisches Element haben [...] dass man selbst Fragen beantworten kann" _Reto Peritz - SRF, Bereichsleiter Show "Jugend | Familie | Unterhaltung"_
+
+__Umfrage__
+Zusatzlich zu den Experteninterviews wurde eine Umfrage durchgeführt, welche von über 120 Teilnehmern ausgefüllt wurde. Die Auswertung bestätigte die Aussagen der Experten, zudem konnten noch weitere Anforderungen bestimmt werden:
+* __Anonym__
+  "Anonymisiertes Interagieren. Würde niemals FB, Insta oder gar meine Nt.-Nummer dafür verwenden wollen" _anonymer Teilnehmer/anonyme Teilnehmerin_
+* __Kostenlos__
+  "kostenlos wichitg!" _anonymer Teilnehmer/anonyme Teilnehmerin_
+* __geringer Aufwand__
+  "Am besten ohne Installation einer App oder dergleichen" _anonymer Teilnehmer/anonyme Teilnehmerin_
