@@ -26,6 +26,6 @@ Zusatzlich zu den Experteninterviews wurde eine Umfrage durchgeführt, welche vo
   > "Am besten ohne Installation einer App oder dergleichen" _anonymer Teilnehmer/anonyme Teilnehmerin_
 
 ##### Wireframe
-Zuerst wurden einige Entwürfe auf Papier gezeichnet, wovon dann zwei in Adobe XD zu Testzwecken umgesetzt wurden.
+Zuerst wurden einige Entwürfe auf Papier gezeichnet, wovon dann zwei in Adobe XD zu Testzwecken umgesetzt wurden <br>
 [Version 1](https://xd.adobe.com/view/b8be4ace-b4a9-4bc4-7075-1c4d5ef401d9-ce8f/)
 [Version 2](https://xd.adobe.com/view/4a28e9e7-e9f4-463b-594c-b7a642265d10-3c19/)
