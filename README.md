@@ -42,17 +42,17 @@ Somit wurde die 2.Version, dank einiger Tipps der Testteilnehmer, noch etwas ang
 ## Umsetzung
 
 ### getestete Technologien
-##### HbbTV
+#### HbbTV
 Zu Beginn war die Idee, das System auf dem Fernseher laufen zu lassen. Dazu bietet sich die "neue" HbbTV-Technologie an. Mit hilfe des Multi Platform Application Toolkit ([MPAT](http://mpat.eu)) wurde ein Versuch auf Basis von Wordpress gestartet. Leider fehlt aber für diese Technologie eine gute Dokumentation und ich konnte auch keine Experten finden, welche mich in diesem Bereich unterstützen könnten. Deshalb wurde entschieden, das System webbasiert zu erstellen.
-##### PHP & jQuery
+#### PHP & jQuery
 Die ersten Gehversuche (abgsehen von HbbTV) wurden mit reinem PHP und JavaScript (jQuery) absolviert. Spätestens bei der Implementierung von Live-Interaktionen mit allen Usern traten bei dieser Variante Probleme auf. Versuche mit [Ratchet](http://socketo.me) (WebSocket for PHP) blieben leider erfolglos.
-##### NUXTjs & Headless Wordpress
+#### NUXTjs & Headless Wordpress
 Ein weiterer Versuch wurde mit [NUXTjs](https://nuxtjs.org) und Wordpress vorgenommen. Die Fragen und Antworten sollten via Wordpress eingetragen werden können. Somit soll die Planung einer neuen Show einfacher ablaufen. Dennoch wurde diese Variante verworfen, da die Variante mit reinem VUE.js schlicht einfacher funktionierte (und das headless Wordpress auch mit reinem Vue.js umgesetzt werden kann). Sicherlich war auch die Tatsache der verfügbaren Unterlagen/Dokumentaionen und Experten ausschlaggebend, welche mich bei Vue.js besser unterstützen konnten als bei NUXTjs.
-##### NODE
+#### NODE
 Bei der Recherche wurde immer wieder empfohlen, mit [NODE](https://nodejs.org/en/) zu arbeiten. Auch ich versuchte mich an NODE, musste mich jedoch davon distanzieren, da das Aufwand-Nutzen-Verhältnis nicht stimmig war und meine nötigen Funktionen der Website auch mit einfacher Mitteln erreicht werden können.
 
 ### Verwendete Technologien
-##### Vue.js
+#### Vue.js
 Schlussendlich entschied ich mich, das JavaScript-Webframework [Vue.js](https://vuejs.org) zu verwenden. Dies bietet alle nötigen Funktionen und bleibt dennoch übersichtlich und vergleichsweise simpel. Zudem ist die vorhandene Dokumentation von Vue.js vorbildlich und ich konnte auch auf die Hilfe einiger Experten zurückgreifen. <br>
 Zudem gibt es für Vue.js auch etliche zusätzliche Libraries, welche einfach implementiert werden können:
 * __Router__ <br>
