@@ -22,7 +22,7 @@
         <!-- write userName in database, gets userId and saves all to the store -->
         <form @submit.prevent="createuser()">
           <input name="name" type="text" placeholder="Name" v-model="$store.state.userName"/>
-            <button type="submit">Einloggen & Fullscreen</button>
+            <button type="submit">Einloggen</button>
         </form>
               <!-- <input id="startInput" name="name" type="text" placeholder="Name" v-model="$store.state.userName">
               <router-link id="Add" tag="button"  to="/start" v-on:click.native="createuser()">Let's go</router-link> -->
@@ -84,48 +84,55 @@
           });
         },
 
-
+        //create new user on DB
         createuser(){
-          let formData = new FormData();
-          formData.append('username', this.$store.state.userName);
-          formData.append('function', 'createuser');
+          
+          //Check, if userName ist empty
+          if(this.$store.state.userName != ''){
+            let formData = new FormData();
+            formData.append('username', this.$store.state.userName);
+            formData.append('function', 'createuser');
 
-          //??
-          var contact = {};
-          formData.forEach(function(value, key){
-            contact[key] = value;
-          });
+            //??
+            var contact = {};
+            formData.forEach(function(value, key){
+              contact[key] = value;
+            });
 
-          axios({
-            method: 'post',
-            url: this.$store.state.databaseUrl,
-            data: formData,
-            config: { headers: {'Content-Type': 'multipart/form-data' }},
-          })
-          .then( response => {
-            //handle success
-            
-            //saves userId to global-store
-            this.$store.state.userId = response.data[1];
+            axios({
+              method: 'post',
+              url: this.$store.state.databaseUrl,
+              data: formData,
+              config: { headers: {'Content-Type': 'multipart/form-data' }},
+            })
+            .then( response => {
+              //handle success
+
+              //saves userId to global-store
+              this.$store.state.userId = response.data[1];
 
 
-            this.$socket.emit('newuser', this.$store.state.userName);
-            //prov. Datenbankprobleme
-            // this.$store.state.userId = 1;
+              this.$socket.emit('newuser', this.$store.state.userName);
+              //prov. Datenbankprobleme
+              // this.$store.state.userId = 1;
 
-            // alert(response.data[1])
-          })
-          .catch(function (error) {
-            //handle error
-            alert("Uh! Konnte nicht validiert werden.")
-            console.log(error)
+              router.push({path: 'start'});
+              // alert(response.data[1])
+            })
+            .catch(function (error) {
+              //handle error
+              alert("Uh! Konnte nicht validiert werden.")
+              console.log(error)
 
-          });
+            });
+          } else {
+            alert("Bitte gib einen Namen ein")
+          }
 
           // Enter Fullscreen
           // this.fullscreen();
 
-          router.push({path: 'start'});
+
         },
 
         fullscreen(){
