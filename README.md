@@ -33,5 +33,15 @@ Zusatzlich zu den Experteninterviews wurde eine Umfrage durchgeführt, welche vo
 
 ##### Wireframe
 Zuerst wurden einige Entwürfe auf Papier gezeichnet, wovon dann zwei in Adobe XD zu Testzwecken umgesetzt wurden <br>
+_(Wir empfehlen die Links bei gedrückter «Cmd»- oder «Ctrl»-Taste zu öffnen)_
 [Version 1](https://xd.adobe.com/view/b8be4ace-b4a9-4bc4-7075-1c4d5ef401d9-ce8f/) <br>
 [Version 2](https://xd.adobe.com/view/4a28e9e7-e9f4-463b-594c-b7a642265d10-3c19/) <br>
+Dank zahlreichem Feedback wurde klar, dass die zweite Version beim Nutzer besser ankommt. Kritikpunkt der ersten Version war hauptsächlich die Übersicht - durch das im Hintergrund laufende Video mit den überlappenden Bedienungselementen geht die Übersicht verloren. Die zweite Version wirkt allgemein übersichtlicher und aufgeräumter. <br>
+Somit wurde die 2.Version, dank einiger Tipps der Testteilnehmer, noch etwas angepasst und als Vorlage für die Umsetzung genutzt.
+
+## Umsetzung
+
+##### Die Suche nach den richtigen Technologien
+###### PHP
+Die ersten Gehversuche wurden mit reinem PHP und JavaScript (jQuery) absolviert. Spätestens bei der Implementierung von Live-Interaktionen mit allen Usern stoss ich bei dieser Variante auf Probleme. Versuche mit [Ratchet](http://socketo.me) (WebSocket for PHP) blieben leider erfolglos. 
+###### NUXT
