@@ -34,6 +34,7 @@ Zusatzlich zu den Experteninterviews wurde eine Umfrage durchgeführt, welche vo
 ### Wireframe
 Zuerst wurden einige Entwürfe auf Papier gezeichnet, wovon dann zwei in Adobe XD zu Testzwecken umgesetzt wurden <br>
 _(Wir empfehlen die Links bei gedrückter «Cmd»- oder «Ctrl»-Taste zu öffnen)_ <br>
+[](/images/Version1)
 [Version 1](https://xd.adobe.com/view/b8be4ace-b4a9-4bc4-7075-1c4d5ef401d9-ce8f/) <br>
 [Version 2](https://xd.adobe.com/view/4a28e9e7-e9f4-463b-594c-b7a642265d10-3c19/) <br>
 Dank zahlreichem Feedback wurde klar, dass die zweite Version beim Nutzer besser ankommt. Kritikpunkt der ersten Version war hauptsächlich die Übersicht - durch das im Hintergrund laufende Video mit den überlappenden Bedienungselementen geht die Übersicht verloren. Die zweite Version wirkt allgemein übersichtlicher und aufgeräumter. <br>
@@ -54,9 +55,11 @@ Bei der Recherche wurde immer wieder empfohlen, mit [NODE](https://nodejs.org/en
 ### Verwendete Technologien
 #### Vue.js
 Schlussendlich entschied ich mich, das JavaScript-Webframework [Vue.js](https://vuejs.org) zu verwenden. Dies bietet alle nötigen Funktionen und bleibt dennoch übersichtlich und vergleichsweise simpel. Zudem ist die vorhandene Dokumentation von Vue.js vorbildlich und ich konnte auch auf die Hilfe einiger Experten zurückgreifen. <br>
-Zudem gibt es für Vue.js auch etliche zusätzliche Libraries, welche einfach implementiert werden können:
-* __Router__ <br>
+Zudem gibt es für Vue.js auch etliche zusätzliche Libraries/Module, welche einfach implementiert werden können:
+* [__Router__](https://router.vuejs.org) <br>
+  Mit Router ist es möglich, einfach zwischen den einzelnen Views der Website zu wechseln, ohne das diese neu lädt (Single Page Application). Dies war wichtig, da Twizzystem mit einigen lokal beim User gespeicherten Variablen arbeitet, welche beim Neuladen der Seite verloren gehen würden. Mit Router ist es möglich, neue Views zu laden ohne dabei die lokalen (mit VUEX) gespeicherten Variablen zu verlieren.
 * [__Vuex__](https://vuex.vuejs.org) <br>
-* __Axios__ <br>
-* __SocketIO__ <br>
-* __Bootstrap__ <br>
+
+* [__Axios__](https://axios.nuxtjs.org) <br>
+* [__SocketIO__](https://socket.io) <br>
+* [__Bootstrap__](https://bootstrap-vue.js.org) <br>
