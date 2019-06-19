@@ -2,7 +2,7 @@
 <b-container fluid id="app">
 
       <div id="video">
-            <!-- <iframe  src="https://www.youtube.com/embed/L_LUpnjgPso?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1" frameborder="0"  allowfullscreen></iframe> -->
+            <!-- <iframe id="iframe" src="https://www.youtube.com/embed/L_LUpnjgPso?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1" frameborder="0"  allowfullscreen></iframe> -->
 
       </div>
       <router-view />
@@ -31,7 +31,7 @@
     }
     #video{
         position: absolute;
-        background-color: black;
+        background-color: rgba(150, 150, 150, 0.5);
         width: 75vw;
         height: 75vh;
         top: 25vh;
@@ -105,6 +105,7 @@
     .sidebarlist{
       /* padding-left: 1vw;
       padding-top: 1vh; */
+
     }
 
     .categorie{
@@ -140,14 +141,15 @@
     }
 
     #listTitle{
-      height: 5vh;
+      height: auto;
       top: 0;
     }
 
     #listContainer{
       display: flex;
       flex-direction: column;
-      height: 95vh;
+      max-height: 95vh;
+      overflow-y: scroll;
     }
 
     #list{

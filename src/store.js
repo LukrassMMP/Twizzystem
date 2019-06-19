@@ -22,7 +22,7 @@ export default new Vuex.Store({
         //actuel Round (starts with round 1)
         roundNr: 1,
         //total played Rounds
-        totalRounds: 1,
+        totalRounds: 2,
 
         //sets Time the User have to give their answer [s]
         time: 20,

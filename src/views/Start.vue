@@ -11,7 +11,7 @@
         <div id="listContainer" class="sidebarlist">
           <ul id="list">
             <!-- refresh everytime, someone sends a new name over Websocket -->
-            <li v-for="userName in this.$store.state.userNames">
+            <li v-for="userName in this.$store.state.userNames" :key="userName.userId">
               {{ userName.userName }}
             </li>
           </ul>
@@ -24,7 +24,8 @@
 
 
 <script>
-  import router from '../router';
+    import router from '../router';
+    import axios from 'axios';
 
   export default{
     data() {
@@ -48,7 +49,39 @@
       },
       newuser(data){
         this.$store.state.userNames.push({userName:data});
-      }
+      },
+
+      redirect(data){
+
+        this.getusers();
+
+        if (this.$store.state.userId == data){
+          alert("Bitte wähle einen anständigen Name. Du wurdest vom Host gekickt...");
+
+          router.push({path: '/'});
+        }
+      },
+
+    },
+
+    methods:{
+      getusers(){
+
+        axios.get(this.$store.state.databaseUrl, {
+          params: {
+            function: 'getusers',
+          }
+        })
+        .then(response => {
+          //handle success
+          this.$store.state.userNames = response.data;
+          // alert(this.$store.state.userNames)
+        })
+        .catch(function (error) {
+          console.log(error);
+
+        });
+      },
     },
 
   }

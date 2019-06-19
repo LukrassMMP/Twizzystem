@@ -13,7 +13,7 @@
             <div id="listTitle" class="sidebarlist"><strong>Alles korrekt beantwortet:</strong></div>
             <div id="listContainer" class="sidebarlist">
               <ul id="list">
-                <li v-for="userName in this.winner">
+                <li v-for="userName in this.winner" :key="userName.userId">
                   {{ userName.userName }}
                 </li>
               </ul>

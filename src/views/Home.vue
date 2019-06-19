@@ -10,7 +10,7 @@
           <div id="listContainer" class="sidebarlist">
             <ul id="list">
               <!-- on load: get userNames from database. refresh everytime, a new user send his Name over Websocket -->
-              <li v-for="userName in this.$store.state.userNames">
+              <li v-for="userName in this.$store.state.userNames" :key="userName.userId">
                 {{ userName.userName }}
               </li>
             </ul>
@@ -53,12 +53,17 @@
 
         newuser(data){
           this.$store.state.userNames.push({userName:data});
+        },
+        redirect(data){
+          if(data != 'redirect'){
+            this.getusers();
+          }
         }
       },
 
       //executed when Side is loaded
       created(){
-      this.getusernames();
+      this.getusers();
       },
 
       methods:{
@@ -66,11 +71,11 @@
         //     this.$store.commit('togglehide')
         // },
 
-        getusernames(){
+        getusers(){
 
           axios.get(this.$store.state.databaseUrl, {
             params: {
-              function: 'getusernames',
+              function: 'getusers',
             }
           })
           .then(response => {
@@ -86,7 +91,7 @@
 
         //create new user on DB
         createuser(){
-          
+
           //Check, if userName ist empty
           if(this.$store.state.userName != ''){
             let formData = new FormData();
@@ -113,6 +118,7 @@
 
 
               this.$socket.emit('newuser', this.$store.state.userName);
+
               //prov. Datenbankprobleme
               // this.$store.state.userId = 1;
 
@@ -164,6 +170,8 @@
               }
           }
         },
+
+
 
     }
 
