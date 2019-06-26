@@ -3,7 +3,7 @@
 
      <div id="header">
        <!-- <div id="question"> -->
-           <h1>Resultat</h1>
+           <h1 class="title">Resultat</h1>
 
       </div>
 
@@ -77,8 +77,8 @@
           })
           .then(response => {
             //handle success
-
-             this.winner = response.data;
+            this.winner = response.data;
+             this.$store.state.winner = this.winner;
 
 
           })

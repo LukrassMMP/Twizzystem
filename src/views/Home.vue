@@ -1,31 +1,30 @@
 <template>
   <div>
       <div id="header">
-
+        <h1 class="title">TWIZZY</h1>
       </div>
 
       <div id="sidebar">
         <div id="sidebarlist">
-          <div id="listTitle" class="sidebarlist"><strong>Teilnehmer:</strong></div>
-          <div id="listContainer" class="sidebarlist">
-            <ul id="list">
+          <h2 id="loginTitle" class="sidebarlist title"><strong>Login</strong></h2>
+          <!-- <div id="listContainer" class="sidebarlist">
+            <ul id="list"> -->
               <!-- on load: get userNames from database. refresh everytime, a new user send his Name over Websocket -->
-              <li v-for="userName in this.$store.state.userNames" :key="userName.userId">
+              <!-- <li v-for="userName in this.$store.state.userNames" :key="userName.userId">
                 {{ userName.userName }}
               </li>
             </ul>
-          </div>
+          </div> -->
         </div>
+
       </div>
 
       <div id="input">
         <!-- write userName in database, gets userId and saves all to the store -->
         <form @submit.prevent="createuser()">
-          <input name="name" type="text" placeholder="Name" v-model="$store.state.userName"/>
-            <button type="submit">Einloggen</button>
+            <input name="name" type="text" placeholder="Name" v-model="$store.state.userName"/>
+            <button class="btn btn-info" type="submit">Einloggen</button>
         </form>
-              <!-- <input id="startInput" name="name" type="text" placeholder="Name" v-model="$store.state.userName">
-              <router-link id="Add" tag="button"  to="/start" v-on:click.native="createuser()">Let's go</router-link> -->
       </div>
 
   </div>
@@ -71,6 +70,7 @@
         //     this.$store.commit('togglehide')
         // },
 
+        //get users from database and stores it into global userNames
         getusers(){
 
           axios.get(this.$store.state.databaseUrl, {
@@ -91,6 +91,9 @@
 
         //create new user on DB
         createuser(){
+
+          //unmute the video
+          document.getElementById('iframe').src = "https://www.youtube.com/embed/L_LUpnjgPso?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=0&autoplay=1"
 
           //Check, if userName ist empty
           if(this.$store.state.userName != ''){

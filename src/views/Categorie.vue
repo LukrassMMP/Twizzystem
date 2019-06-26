@@ -4,10 +4,10 @@
      <div id="header">
        <!-- <div id="question"> -->
        <!-- check, if last answer was correct -->
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question" v-if="lastCorrectAnswer">
+           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title" v-if="lastCorrectAnswer">
              Wähle die nächste Kategorie!
            </h1>
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question" v-else>
+           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title" v-else>
              Nur Gewinner können wählen...
            </h1>
 

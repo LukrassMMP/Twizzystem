@@ -9,10 +9,13 @@ import store from './store';
 // import SuiVue from 'semantic-ui-vue';
 import BootstrapVue from 'bootstrap-vue';
 // import {Howl, Howler} from 'howler';
+import VueYouTubeEmbed from 'vue-youtube-embed'
 
 // export const SocketInstance = socketio('http://localhost:3000');
 
 Vue.use(BootstrapVue)
+
+Vue.use(VueYouTubeEmbed)
 
 // Vue.use(Howler)
 
@@ -23,9 +26,9 @@ Vue.use(BootstrapVue)
 Vue.use(new VueSocketIO({
   debug: true,
   // connection for local testing
-  connection: socketio('http://localhost:3000'),
+  // connection: socketio('http://localhost:5000'),
   // NGROK connection
-  // connection: socketio('https://f0e06658.ngrok.io'),
+  connection: socketio('http://twizzy.herokuapp.com/'),
   vuex: {
       store,
       actionPrefix: "SOCKET_",

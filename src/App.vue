@@ -2,8 +2,8 @@
 <b-container fluid id="app">
 
       <div id="video">
-            <!-- <iframe id="iframe" src="https://www.youtube.com/embed/L_LUpnjgPso?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1" frameborder="0"  allowfullscreen></iframe> -->
-
+            <iframe id="iframe" src="https://www.youtube.com/embed/L_LUpnjgPso?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1" frameborder="0"  allowfullscreen></iframe>
+            <!-- <youtube :video-id="videoId" ></youtube> -->
       </div>
       <router-view />
 
@@ -17,11 +17,21 @@
       name: "home",
       components: {
 //        HelloWorld
-      }
+    },
+
+     data() {
+       return{
+    //   videoId: 'bbLDfueL7eU?showinfo=0&controls=0',
+     }
+     }
     };
 </script>
 
 <style>
+    html {
+      font-size: 1.5vw;
+    }
+
     #app {
       font-family: 'Avenir', Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -47,6 +57,7 @@
         position: absolute;
         width: 75vw;
         height: 25vh;
+        max-height: 25vh;
         top: 0;
         left: 0;
         background-color: white;
@@ -59,11 +70,15 @@
 
     #input{
         position: absolute;
-        left: 40vw;
+        left: 77.5vw;
         top: 40vh;
         width: 20vw;
         height: 20vh;
     }
+
+    input {
+        text-align: center;
+      }
 
     #input input{
         position: absolute;
@@ -81,7 +96,7 @@
     }
 
     .question {
-      height: 20vh;
+      height: 18vh;
       width: 75vw;
     }
 
@@ -117,7 +132,7 @@
     .answer{
         height: 25vh;
         width: 25vw;
-        background-color: white;
+        /* background-color: white; */
         /* font-size: 1em;
         border: 2px solid red;
         background-color: white;
@@ -157,18 +172,14 @@
       margin-bottom: auto;
     }
 
-    /* #answerA{
-        top:0;
+    #loginTitle{
+      text-align: center;
     }
-    #answerB{
-        top:25vh;
+
+    .title{
+      margin-top: 2vh;
     }
-    #answerC{
-        top:50vh;
-    }
-    #answerD{
-        top:75vh;
-    } */
+
 
 
 </style>

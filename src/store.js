@@ -50,12 +50,14 @@ export default new Vuex.Store({
         givenAnswer: '',
 
         //set true if current User had all answer correctAnswer
-        victory: true,
+        victory: false,
 
         // topics for the next show
         topics: '',
         // all Information to the winning topic
         winnerTopic: '',
+
+        winner: ''
   },
   mutations: {
 

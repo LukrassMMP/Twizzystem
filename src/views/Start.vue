@@ -2,7 +2,7 @@
   <div>
 
     <div id="header">
-      <h1>TWIZZY</h1>
+      <h1 class="title">TWIZZY</h1>
     </div>
 
     <div id="sidebar">
@@ -65,6 +65,8 @@
     },
 
     methods:{
+
+      //get users from database and stores it into global userNames
       getusers(){
 
         axios.get(this.$store.state.databaseUrl, {

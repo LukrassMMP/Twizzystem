@@ -3,7 +3,7 @@
 
      <div id="header">
        <!-- <div id="question"> -->
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question">
+           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title">
              {{this.$store.state.question.questionName}}
 
            </h1>
@@ -75,8 +75,6 @@
 
 <script>
     import router from '../router';
-
-
 
 
     export default{

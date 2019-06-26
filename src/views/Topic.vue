@@ -4,10 +4,10 @@ topicName<template>
      <div id="header">
        <!-- <div id="question"> -->
        <!-- check, if last answer was correct -->
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question" v-if="$store.state.victory">
+           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title" v-if="$store.state.victory">
              Wähle das Thema für die nächste Show!
            </h1>
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question" v-else>
+           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title" v-else>
             Nur die Gewinner der Show können das nächste Thema wählen!
            </h1>
 

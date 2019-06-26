@@ -3,14 +3,14 @@
 
      <div id="header">
        <!-- <div id="question"> -->
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question">
+           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title">
              In der nächsten Show geht es um das Thema {{this.$store.state.winnerTopic.topicName}}!!!
            </h1>
 
       </div>
 
 
-        <div id="sidebar">
+        <div v-if="selection" id="sidebar">
           <!-- v-if to avert error (topics not defined) -->
           <!-- add correct-class to winnerTopic -->
           <button v-if="$store.state.topics[0]" id="categorie1"
@@ -35,6 +35,20 @@
             </button>
         </div>
 
+        <div v-else id="sidebar">
+          <div id="sidebarlist">
+            <div id="listTitle" class="sidebarlist"><strong>Alles korrekt beantwortet:</strong></div>
+            <div id="listContainer" class="sidebarlist">
+              <ul id="list">
+                <li v-for="userName in this.$store.state.winner" :key="userName.userId">
+                  {{ userName.userName }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
     </div>
 </template>
 
@@ -46,6 +60,7 @@
           isConnected: false,
           result: '',
           disabled: false,
+          selection: true,
         }
       },
 
@@ -58,7 +73,9 @@
           this.isConnected = false;
         },
         redirect(data){
-
+          if (data == 'redirect'){
+            this.selection = false;
+          }
         }
       },
       //end sockets

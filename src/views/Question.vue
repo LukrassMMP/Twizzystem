@@ -3,7 +3,7 @@
 
      <div id="header">
        <!-- <div id="question"> -->
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question">
+           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title">
              {{this.$store.state.question.questionName}}
            </h1>
            <b-progress id="progressbar"
@@ -82,6 +82,8 @@
         redirect(data){
           if(data == 'redirect'){
             router.push({path: 'questionresult'});
+          }else{
+              this.getusers();
           }
         },
 
@@ -113,6 +115,27 @@
       },
 
       methods:{
+
+        //get users from database and stores it into global userNames
+        getusers(){
+
+          axios.get(this.$store.state.databaseUrl, {
+            params: {
+              function: 'getusers',
+            }
+          })
+          .then(response => {
+            //handle success
+            this.$store.state.userNames = response.data;
+            // alert(this.$store.state.userNames)
+          })
+          .catch(function (error) {
+            console.log(error);
+
+          });
+        },
+
+
         //starts Timer
         startTimer: function(){
           this.interval = setInterval(() =>{
