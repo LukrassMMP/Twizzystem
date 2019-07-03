@@ -4,12 +4,12 @@
      <div id="header">
        <!-- <div id="question"> -->
        <!-- check, if last answer was correct -->
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title" v-if="lastCorrectAnswer">
+           <h3 v-bind:id="'question' + $store.state.questionId"  class="question title" v-if="lastCorrectAnswer">
              Wähle die nächste Kategorie!
-           </h1>
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title" v-else>
+           </h3>
+           <h3 v-bind:id="'question' + $store.state.questionId"  class="question title" v-else>
              Nur Gewinner können wählen...
-           </h1>
+           </h3>
 
            <b-progress id="progressbar"
                         :max="$store.state.time"
@@ -25,12 +25,17 @@
 
 
         <div id="sidebar">
+          <!-- hidden button to center buttons -->
+          <button  class="categorie btn hidden diabled"></button>
+
+
           <!-- v-if to avert error (categories not defined) -->
           <!-- votecategorie: disable buttons, send vote to database and all other clients via Websocket -->
           <!-- changebutton: add active class to pushed button -->
+
           <button v-if="$store.state.categories[0]"
                       id="categorie1"
-                      class ="categorie"
+                      class ="categorie btn"
                       v-on:click="changebutton('categorie1'); votecategorie($store.state.categories[0].categorieId);"
                       :disabled = "disabled">
 
@@ -44,7 +49,7 @@
               <!-- changebutton: add active class to pushed button -->
             <button v-if="$store.state.categories[1]"
                         id="categorie2"
-                        class ="categorie"
+                        class ="categorie btn"
                         v-on:click="changebutton('categorie2'); votecategorie($store.state.categories[1].categorieId); "
                         :disabled = "disabled">
 

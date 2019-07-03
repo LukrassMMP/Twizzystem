@@ -3,18 +3,21 @@
 
      <div id="header">
        <!-- <div id="question"> -->
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title">
+           <h3 v-bind:id="'question' + $store.state.questionId"  class="question title">
              {{this.$store.state.winnerCategorie.categorieName}} hat gewonnen!!!
-           </h1>
+           </h3>
 
       </div>
 
 
         <div id="sidebar">
+          <!-- hidden button to center buttons -->
+          <button  class="categorie btn hidden diabled"></button>
+
           <!-- v-if to avert error (categories not defined) -->
           <!-- add correct-class to winnerCategorie -->
-          <button v-if="$store.state.categories[0]" id="categorie1"
-                      class ="categorie"
+              <button v-if="$store.state.categories[0]" id="categorie1"
+                      class ="categorie btn"
                       v-bind:class ="{ correct: this.$store.state.winnerCategorie.categorieName == this.$store.state.categories[0].categorieName}"
                       disabled>
 
@@ -26,7 +29,7 @@
               <!-- v-if to avert error (categories not defined) -->
               <!-- add correct-class to winnerCategorie -->
             <button v-if="$store.state.categories[1]" id="categorie2"
-                        class ="categorie"
+                        class ="categorie btn"
                         v-bind:class ="{ correct: this.$store.state.winnerCategorie.categorieName == this.$store.state.categories[1].categorieName}"
                         disabled>
 

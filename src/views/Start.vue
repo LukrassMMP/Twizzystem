@@ -2,13 +2,13 @@
   <div>
 
     <div id="header">
-      <h1 class="title">TWIZZY</h1>
+      <h1 class="titleAlone">TWIZZY</h1>
     </div>
 
     <div id="sidebar">
       <div id="sidebarlist">
-        <div id="listTitle" class="sidebarlist"><strong>Teilnehmer:</strong></div>
-        <div id="listContainer" class="sidebarlist">
+        <h2 id="listTitle" class="sidebarlist titleAlone">Users</h2>
+        <div id="listContainer" class="sidebarlist list">
           <ul id="list">
             <!-- refresh everytime, someone sends a new name over Websocket -->
             <li v-for="userName in this.$store.state.userNames" :key="userName.userId">

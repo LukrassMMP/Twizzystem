@@ -25,12 +25,15 @@ topicName<template>
 
 
         <div id="sidebar">
+          <!-- hidden button to center buttons -->
+          <button  class="categorie btn hidden diabled"></button>
+          
           <!-- v-if to avert error (topics not defined) -->
           <!-- votecategorie: disable buttons, send vote to database and all other clients via Websocket -->
           <!-- changebutton: add active class to pushed button -->
           <button v-if="$store.state.topics[0]"
                       id="topic1"
-                      class ="categorie"
+                      class ="categorie btn"
                       v-on:click="changebutton('topic1'); votetopic($store.state.topics[0].topicId);"
                       :disabled = "disabled">
 
@@ -43,7 +46,7 @@ topicName<template>
               <!-- changebutton: add active class to pushed button -->
             <button v-if="$store.state.topics[1]"
                         id="topic2"
-                        class ="categorie"
+                        class ="categorie btn"
                         v-on:click="changebutton('topic2'); votetopic($store.state.topics[1].topicId); "
                         :disabled = "disabled">
 

@@ -11,10 +11,13 @@
 
 
         <div v-if="selection" id="sidebar">
+          <!-- hidden button to center buttons -->
+          <button  class="categorie btn hidden diabled"></button>
+          
           <!-- v-if to avert error (topics not defined) -->
           <!-- add correct-class to winnerTopic -->
           <button v-if="$store.state.topics[0]" id="categorie1"
-                      class ="categorie"
+                      class ="categorie btn"
                       v-bind:class ="{ correct: this.$store.state.winnerTopic.topicName == this.$store.state.topics[0].topicName}"
                       disabled>
 
@@ -26,7 +29,7 @@
               <!-- v-if to avert error (topics not defined) -->
               <!-- add correct-class to winnerTopic -->
             <button v-if="$store.state.topics[1]" id="categorie2"
-                        class ="categorie"
+                        class ="categorie btn"
                         v-bind:class ="{ correct: this.$store.state.winnerTopic.topicName == this.$store.state.topics[1].topicName}"
                         disabled>
 

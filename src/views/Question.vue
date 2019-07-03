@@ -3,9 +3,9 @@
 
      <div id="header">
        <!-- <div id="question"> -->
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title">
+           <h3 v-bind:id="'question' + $store.state.questionId"  class="question title">
              {{this.$store.state.question.questionName}}
-           </h1>
+           </h3>
            <b-progress id="progressbar"
                         :max="$store.state.time"
                         animated
@@ -21,7 +21,7 @@
 
         <div id="sidebar">
           <button id="answerA"
-                      class ="answer button"
+                      class ="answer button btn"
                       v-on:click="activeButton('answerA')"
                       :disabled= "disabled">
                     <div>{{this.$store.state.question.answerA}}</div>
@@ -29,7 +29,7 @@
               </button>
 
             <button id="answerB"
-                        class ="answer button"
+                        class ="answer button btn"
                         v-on:click="activeButton('answerB')"
                         :disabled= "disabled">
                       <div>{{this.$store.state.question.answerB}}</div>
@@ -37,7 +37,7 @@
               </button>
 
             <button id="answerC"
-                        class ="answer button"
+                        class ="answer button btn"
                         v-on:click="activeButton('answerC')"
                         :disabled= "disabled">
                 <div>{{this.$store.state.question.answerC}}</div>
@@ -45,7 +45,7 @@
               </button>
 
             <button id="answerD"
-                        class ="answer button"
+                        class ="answer button btn"
                         v-on:click="activeButton('answerD')"
                         :disabled= "disabled">
                 <div>{{this.$store.state.question.answerD}}</div>

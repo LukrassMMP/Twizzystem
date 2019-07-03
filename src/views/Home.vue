@@ -1,12 +1,12 @@
 <template>
   <div>
       <div id="header">
-        <h1 class="title">TWIZZY</h1>
+        <h1 class="titleAlone">TWIZZY</h1>
       </div>
 
       <div id="sidebar">
         <div id="sidebarlist">
-          <h2 id="loginTitle" class="sidebarlist title"><strong>Login</strong></h2>
+          <h1 id="loginTitle" class="sidebarlist titleAlone">Login</h1>
           <!-- <div id="listContainer" class="sidebarlist">
             <ul id="list"> -->
               <!-- on load: get userNames from database. refresh everytime, a new user send his Name over Websocket -->
@@ -23,7 +23,7 @@
         <!-- write userName in database, gets userId and saves all to the store -->
         <form @submit.prevent="createuser()">
             <input name="name" type="text" placeholder="Name" v-model="$store.state.userName"/>
-            <button class="btn btn-info" type="submit">Einloggen</button>
+            <button class="btn" type="submit">Einloggen</button>
         </form>
       </div>
 

@@ -3,10 +3,10 @@
 
      <div id="header">
        <!-- <div id="question"> -->
-           <h1 v-bind:id="'question' + $store.state.questionId"  class="question title">
+           <h3 v-bind:id="'question' + $store.state.questionId"  class="question title">
              {{this.$store.state.question.questionName}}
 
-           </h1>
+           </h3>
 
            <div id="progressbar" v-if="lastCorrectAnswer">
              GRATULATION!!
@@ -23,7 +23,7 @@
         <div id="sidebar">
           <!-- v-bind add false class to given answer. Adds correct class to the correct answer -->
           <button id="answerA"
-                      class ="answer"
+                      class ="answer btn"
                       v-bind:class ="{ false: this.$store.state.givenAnswer == 'answerA',
                         correct: this.$store.state.question.correctAnswer == 'answerA'}"
                       disabled>
@@ -35,7 +35,7 @@
 
               <!-- v-bind add false class to given answer. Adds correct class to the correct answer -->
             <button id="answerB"
-                        class ="answer"
+                        class ="answer btn"
                         v-bind:class ="{ false: this.$store.state.givenAnswer == 'answerB',
                           correct: this.$store.state.question.correctAnswer == 'answerB'}"
                         disabled>
@@ -47,7 +47,7 @@
 
               <!-- v-bind add false class to given answer. Adds correct class to the correct answer -->
             <button id="answerC"
-                        class ="answer"
+                        class ="answer btn"
                         v-bind:class ="{ false: this.$store.state.givenAnswer == 'answerC',
                           correct: this.$store.state.question.correctAnswer == 'answerC'}"
                         disabled>
@@ -59,7 +59,7 @@
 
               <!-- v-bind add false class to given answer. Adds correct class to the correct answer -->
             <button id="answerD"
-                        class ="answer"
+                        class ="answer btn"
                         v-bind:class ="{ false: this.$store.state.givenAnswer == 'answerD',
                           correct: this.$store.state.question.correctAnswer == 'answerD'}"
                         disabled>

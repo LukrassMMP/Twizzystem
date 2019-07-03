@@ -13,11 +13,13 @@ html {
   width: 100vw;
   margin: 0;
   padding: 0;
-  font-size: 1.5vw;
+  font-size: calc(0.3em + 1vw);
+
 }
 
 body {
-    background-image: linear-gradient(to right, rgba(13, 58, 87, 1) , rgba(176, 49, 83, 1));
+
+   background-image: linear-gradient(to right, #24506A , #af3153);
     margin: 0;
     padding: 0;
     /* height: 100%;
@@ -29,7 +31,18 @@ h1, p{
   margin: 0;
 }
 
-@media (min-aspect-ratio: 16/9) {
+@media all and (max-width: 600px){
+  html{font-size: 1.7vw;}
+}
+@media all and (min-width: 1200px){
+  html{font-size: 18px;}
+}
+@media all and (min-height: 1200px){
+  html{font-size: 18px;}
+}
+
+
+/* @media (min-aspect-ratio: 16/9) {
   .video-foreground { height: 300%; top: -100%; }
 }
 @media (max-aspect-ratio: 16/9) {
@@ -41,7 +54,7 @@ h1, p{
 }
 @media all and (max-width: 500px) {
 .vid-info .acronym { display: none; }
-}
+} */
 
 
 
@@ -78,7 +91,7 @@ h1, p{
 }
 #header {
     top: 0;
-    color: white;
+    color: rgb(242, 242, 242);
     position: absolute;
     width: 75%;
     height: 25%;
@@ -87,11 +100,11 @@ h1, p{
     left: 0;
     /* background-color: white; */
     /* padding-top: 1vh; */
-
 }
 
 .hidden{
-    display: none;
+  visibility: hidden;
+    /* display: none; */
 }
 
 #input{
@@ -119,16 +132,94 @@ input {
     left: 0;
     height: 10vh;
     width: 20vw;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+#progressbar{
+  background-color: rgba(0,0,0,0);
+  : green;
+}
+
+.progress-bar{
+  background-color: rgba(2, 164, 168, 0.6);
 }
 
 .btn {
-  background-color: rgba(26, 164, 167, 0.5);
-  border: none;
+  height: 21vh;
+  width: 23vw;
+  /* background-color: white; */
+  /* font-size: 1em;
+  border: 2px solid red;
+  background-color: white;
+  color: red; */
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  background-color: rgba(2, 164, 168, 0.5);
+  color: rgb(242, 242, 242);
+}
+
+.btn:hover{
+  background-color: rgba(2, 164, 168, 0.6);
+  color: rgb(242, 242, 242);
+}
+
+.active:disabled{
+  opacity: 1;
+}
+
+.correct:disabled{
+  opacity: 1;
+}
+
+.false:disabled{
+  opacity: 1;
+}
+
+.active:disabled:hover{
+  background-color: rgba(2, 164, 168, 0.6);
+  color: rgb(242, 242, 242);
+}
+
+.correct:disabled:hover{
+  background-color: rgba(0, 204, 51, 0.5);
+  color: rgb(242, 242, 242);
+}
+
+.false:disabled:hover{
+  background-color: rgba(255, 0, 51, 0.2);
+  color: rgb(242, 242, 242);
+}
+
+/* have to be before .correct definition */
+.false {
+  background-color: rgba(255, 0, 51, 0.2);
+  color: rgb(242, 242, 242);
+}
+
+/* have to be after .false definition */
+.correct {
+  background-color: rgba(0, 204, 51, 0.5);
+  color: rgb(242, 242, 242);
+}
+
+
+.active {
+  background-color: rgba(2, 164, 168, 0.6);
+  color: rgb(242, 242, 242);
 }
 
 .question {
+
   height: 18vh;
   width: 75vw;
+
+  vertical-align: middle;;
+  line-height: 18vh;
+  text-align: center;
+
 }
 
 #progressbar {
@@ -154,37 +245,14 @@ input {
 
 }
 
+
+
 .categorie{
-  height: 50vh;
-  width: 25vw;
-  /* background-color: white; */
+
 }
 
-.answer{
-    height: 25vh;
-    width: 25vw;
-    /* background-color: white; */
-    /* font-size: 1em;
-    border: 2px solid red;
-    background-color: white;
-    color: red; */
-}
 
-.active {
-  border: 2px solid blue;
-  color: blue;
-}
 
-/* have to be before .correct definition */
-.false {
-  border: 2px solid red;
-  color: red;
-}
-/* have to be after .false definition */
-.correct {
-  border: 2px solid green;
-  color: green;
-}
 
 #listTitle{
   height: auto;
@@ -194,13 +262,25 @@ input {
 #listContainer{
   display: flex;
   flex-direction: column;
-  max-height: 95vh;
-  overflow-y: scroll;
+  max-height: 75vh;
+  overflow-y: auto;
 }
 
 #list{
   /* margin-top: auto;
   margin-bottom: auto; */
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+
+::-webkit-scrollbar-track {
+  background: green;
+}
+
+::-webkit-scrollbar {
+  width: 1000px;
 }
 
 #loginTitle{
@@ -209,4 +289,10 @@ input {
 
 .title{
   /* margin-top: 2vh; */
+}
+
+.titleAlone{
+  vertical-align: middle;;
+  line-height: 25vh;
+  text-align: center;
 }
