@@ -2,6 +2,7 @@
   <div>
       <div id="header">
         <h1 class="titleAlone">TWIZZY</h1>
+        <p>Ton erklingt nach Login</p>
       </div>
 
       <div id="sidebar">
@@ -22,7 +23,7 @@
       <div id="input">
         <!-- write userName in database, gets userId and saves all to the store -->
         <form @submit.prevent="createuser()">
-            <input name="name" type="text" placeholder="Name" v-model="$store.state.userName"/>
+            <input name="name" type="text" placeholder="Name" v-model="$store.state.userName" style="font-size:16px"/>
             <button class="btn" type="submit">Einloggen</button>
         </form>
       </div>
@@ -93,7 +94,7 @@
         createuser(){
 
           //unmute the video
-          document.getElementById('iframe').src = "https://www.youtube.com/embed/WlWNtmpUDT4?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=0&autoplay=1&loop=1"
+          // document.getElementById('iframe').src = "https://www.youtube.com/embed/WlWNtmpUDT4?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=0&autoplay=1&loop=1"
 
           //Check, if userName ist empty
           if(this.$store.state.userName != ''){

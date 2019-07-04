@@ -3,7 +3,7 @@
 
       <div id="video">
          <!-- Youtube Video -->
-         <iframe id="iframe" width="560" height="315" src="https://www.youtube.com/embed/WlWNtmpUDT4?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1&loop=1&&playlist=WlWNtmpUDT4" frameborder="0" allow="accelerometer; autoplay; loop; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         <iframe id="iframe" width="560" height="315" src="https://www.youtube.com/embed/WlWNtmpUDT4?rel=0&modestbranding=1&autohide=0&mute=1&showinfo=0&controls=0&autoplay=1&playsinline=1&loop=1&&playlist=WlWNtmpUDT4" frameborder="0" allow="accelerometer; autoplay; loop; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <!-- <iframe id="iframe" src="https://www.youtube.com/embed/L_LUpnjgPso?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1" frameborder="0"  allowfullscreen></iframe> -->
             <!-- <youtube :video-id="videoId" ></youtube> -->
           <!-- Facebook Video -->

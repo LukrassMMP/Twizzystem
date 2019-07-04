@@ -13,7 +13,7 @@
 
            </div>
            <div id="progressbar" v-else>
-             Villeicht beim nächsten Mal...
+             Vielleicht beim nächsten Mal...
 
            </div>
 
