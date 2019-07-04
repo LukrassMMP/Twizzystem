@@ -1,9 +1,16 @@
 <template>
   <div>
-      <div id="header">
+      <div id="header" style="margin-left:12.5vw;">
         <h1 class="title">2019</h1>
       </div>
+      <div id="sidebar">
+        <h2 id="listContainer" class="sidebarlist titleAlone" style="margin-top: 25vh;">Was</h2>
+        <h2 id="listContainer" class="sidebarlist titleAlone" >mag</h2>
+        <h2 id="listContainer" class="sidebarlist titleAlone" >das</h2>
+        <h2 id="listContainer" class="sidebarlist titleAlone" >sein</h2>
+        <h2 id="listContainer" class="sidebarlist titleAlone" >?</h2>
 
+      </div>
   </div>
 </template>
 
@@ -36,7 +43,9 @@
 </script>
 
 <style media="screen">
-  #video{
+
+
+  /* #video{
     width: 100vw;
     height: 75vh;
   }
@@ -51,5 +60,5 @@
   .title{
     margin-top: 5vh;
 
-  }
+  } */
 </style>

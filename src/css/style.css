@@ -18,8 +18,9 @@ html {
 }
 
 body {
-
+    /* background-image: linear-gradient(to right, #333 , #000); */
    background-image: linear-gradient(to right, #24506A , #af3153);
+   /* background-color: grey; */
     margin: 0;
     padding: 0;
     /* height: 100%;
@@ -77,12 +78,15 @@ h1, p{
 #video{
     position: absolute;
     /* background-color: rgba(150, 150, 150, 0.5); */
-    width: 75%;
-    height: 75%;
-    top: 25%;
+    width: 75vw;
+    height: 75vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 2vh;
     left: 0px;
     /* margin-left: 5px;
     margin-bottom: 5px; */
+    bottom: 2.5vh;
 }
 #video iframe {
   width: 100%;
@@ -93,11 +97,15 @@ h1, p{
     top: 0;
     color: rgb(242, 242, 242);
     position: absolute;
-    width: 75%;
-    height: 25%;
-    max-height: 25%;
+    width: 75vw;
+    height: 25vh;
+    max-height: 25vh;
     top: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     /* background-color: white; */
     /* padding-top: 1vh; */
 }
@@ -109,10 +117,10 @@ h1, p{
 
 #input{
     position: absolute;
-    left: 77.5%;
-    top: 40%;
-    width: 20%;
-    height: 20%;
+    left: 77.5vw;
+    top: 40vh;
+    width: 20vw;
+    height: 20vh;
 }
 
 input {
@@ -138,15 +146,16 @@ input {
 
 #progressbar{
   background-color: rgba(0,0,0,0);
-  : green;
+  padding-left: 2vh;
+  padding-right: 2vh;
 }
 
 .progress-bar{
-  background-color: rgba(2, 164, 168, 0.6);
+  background-color: rgba(2, 164, 168, 0.4);
 }
 
 .btn {
-  height: 21vh;
+  height: 22.5vh;
   width: 23vw;
   /* background-color: white; */
   /* font-size: 1em;
@@ -154,11 +163,14 @@ input {
   background-color: white;
   color: red; */
   margin-top: 2vh;
-  margin-bottom: 2vh;
   margin-left: 1vw;
   margin-right: 1vw;
   background-color: rgba(2, 164, 168, 0.5);
   color: rgb(242, 242, 242);
+}
+
+#answerD{
+  margin-bottom: 2vh;
 }
 
 .btn:hover{
@@ -166,8 +178,13 @@ input {
   color: rgb(242, 242, 242);
 }
 
+.btn:disabled{
+  pointer-events: none;
+}
+
 .active:disabled{
   opacity: 1;
+  border-left: 5px solid black;
 }
 
 .correct:disabled{
@@ -178,37 +195,30 @@ input {
   opacity: 1;
 }
 
-.active:disabled:hover{
-  background-color: rgba(2, 164, 168, 0.6);
-  color: rgb(242, 242, 242);
-}
-
-.correct:disabled:hover{
-  background-color: rgba(0, 204, 51, 0.5);
-  color: rgb(242, 242, 242);
-}
-
-.false:disabled:hover{
-  background-color: rgba(255, 0, 51, 0.2);
-  color: rgb(242, 242, 242);
-}
-
 /* have to be before .correct definition */
 .false {
   background-color: rgba(255, 0, 51, 0.2);
   color: rgb(242, 242, 242);
+  pointer-events: none;
+  border-left: 5px solid black;
 }
 
 /* have to be after .false definition */
 .correct {
   background-color: rgba(0, 204, 51, 0.5);
   color: rgb(242, 242, 242);
+  pointer-events: none;
 }
 
+.correctAnswer{
+  border-left: 5px solid black;
+}
 
 .active {
   background-color: rgba(2, 164, 168, 0.6);
   color: rgb(242, 242, 242);
+  border-left: 5px solid black;
+  pointer-events: none;
 }
 
 .question {
@@ -216,8 +226,13 @@ input {
   height: 18vh;
   width: 75vw;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
   vertical-align: middle;;
-  line-height: 18vh;
+  /* line-height: 18vh; */
   text-align: center;
 
 }
@@ -230,8 +245,8 @@ input {
 #sidebar{
   position: absolute;
   text-align: left;
-  left: 75%;
-  width: 25%;
+  left: 75vw;
+  width: 25vw;
   max-height: 100vh;
   top: 0;
   /* background: white; */
@@ -242,7 +257,9 @@ input {
 .sidebarlist{
   /* padding-left: 1vw;
   padding-top: 1vh; */
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 
@@ -255,8 +272,11 @@ input {
 
 
 #listTitle{
-  height: auto;
-  top: 0;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
 }
 
 #listContainer{
@@ -285,14 +305,23 @@ input {
 
 #loginTitle{
   text-align: center;
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .title{
   /* margin-top: 2vh; */
+  padding-left: 2vh;
+  padding-right: 2vh;
 }
 
 .titleAlone{
-  vertical-align: middle;;
-  line-height: 25vh;
+
+  /* vertical-align: middle;;
+  line-height: 25vh; */
   text-align: center;
+  padding-left: 2vh;
+  padding-right: 2vh;
 }

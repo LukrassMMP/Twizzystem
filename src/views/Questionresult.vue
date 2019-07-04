@@ -9,14 +9,21 @@
            </h3>
 
            <div id="progressbar" v-if="lastCorrectAnswer">
-             GRATULATION!!
+             GRATULATION!
+
            </div>
            <div id="progressbar" v-else>
-             LEIDER NEIN!
+             Villeicht beim nächsten Mal...
+
            </div>
-           <audio controls autoplay hidden>
-              <source src="src/assets/TestSound.wav" type="audio/wav">
+
+           <audio controls autoplay hidden v-if="lastCorrectAnswer">
+              <source src="../assets/frage_richtig.ogg" type="audio/ogg">
            </audio>
+           <audio controls autoplay hidden v-else>
+              <source src="../assets/frage_falsch.wav" type="audio/wav">
+           </audio>
+
       </div>
 
 
@@ -25,7 +32,8 @@
           <button id="answerA"
                       class ="answer btn"
                       v-bind:class ="{ false: this.$store.state.givenAnswer == 'answerA',
-                        correct: this.$store.state.question.correctAnswer == 'answerA'}"
+                        correct: this.$store.state.question.correctAnswer == 'answerA'}
+                        "
                       disabled>
 
                       <div>{{this.$store.state.question.answerA}}</div>
