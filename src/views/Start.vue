@@ -3,7 +3,7 @@
 
     <div id="header">
       <h1 class="titleAlone">TWIZZY</h1>
-      <p>Bitte starte das Video (falls nicht automatisch geschehen)<p>
+      <p>Bitte starte das Video (falls nicht automatisch geschehen)</p>
     </div>
 
     <div id="sidebar">
@@ -67,7 +67,7 @@
 
     created(){
       //unmute Video
-      document.getElementById('iframe').src = "https://www.youtube.com/embed/WlWNtmpUDT4?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=0&playsinline=1&autoplay=1";
+      // document.getElementById('iframe').src = "https://www.youtube.com/embed/WlWNtmpUDT4?rel=0&modestbranding=1&autohide=1&mute=0&showinfo=0&controls=0&playsinline=1&autoplay=1";
     },
 
     methods:{

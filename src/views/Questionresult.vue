@@ -18,7 +18,7 @@
            </div>
 
            <audio controls autoplay hidden v-if="lastCorrectAnswer">
-              <source src="../assets/frage_richtig.ogg" type="audio/ogg">
+              <source src="../assets/frage_richtig.wav" type="audio/wav">
            </audio>
            <audio controls autoplay hidden v-else>
               <source src="../assets/frage_falsch.wav" type="audio/wav">
