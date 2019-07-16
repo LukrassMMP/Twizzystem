@@ -3,7 +3,9 @@
 
       <div id="video">
         <!-- Twitch video -->
-        <iframe src="https://player.twitch.tv/?channel=esl_csgo" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+        <iframe src="https://player.twitch.tv/?channel=twizzylivequizshow" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+
+        <!-- <iframe src="https://player.twitch.tv/?channel=esl_csgo" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe> -->
 
         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/MByeJ0eq4c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
