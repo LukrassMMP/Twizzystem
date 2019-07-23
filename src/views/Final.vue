@@ -13,7 +13,7 @@
         <div v-if="selection" id="sidebar">
           <!-- hidden button to center buttons -->
           <button  class="categorie btn hidden diabled"></button>
-          
+
           <!-- v-if to avert error (topics not defined) -->
           <!-- add correct-class to winnerTopic -->
           <button v-if="$store.state.topics[0]" id="categorie1"
@@ -40,8 +40,13 @@
 
         <div v-else id="sidebar">
           <div id="sidebarlist">
-            <div id="listTitle" class="sidebarlist"><strong>Alles korrekt beantwortet:</strong></div>
-            <div id="listContainer" class="sidebarlist">
+            <a  :class="{ disabled: !this.$store.state.victory }" href="zertifikat.jpeg" download="Gewinnerzertifikat.jpeg">
+                  <button class="answer button btn" :disabled = "!this.$store.state.victory">
+                    Gewinner-Zertifikat downloaden
+                    </button>
+            </a>
+            <div id="listTitleFinal" class="sidebarlist"><strong>Gewinner:</strong></div>
+            <div id="listContainerFinal" class="sidebarlist">
               <ul id="list">
                 <li v-for="userName in this.$store.state.winner" :key="userName.userId">
                   {{ userName.userName }}

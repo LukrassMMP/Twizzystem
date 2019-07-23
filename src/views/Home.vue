@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="orientation">
+      <div>Bitte drehe dein Gerät</div>
+    </div>
+
+
       <div id="header">
         <h1 class="titleAlone">TWIZZY</h1>
         <p>Ton erklingt nach Login</p>
@@ -23,7 +28,7 @@
       <div id="input">
         <!-- write userName in database, gets userId and saves all to the store -->
         <form @submit.prevent="createuser()">
-            <input name="name" type="text" placeholder="Name" v-model="$store.state.userName" style="font-size:16px"/>
+            <input name="name" type="text" placeholder="Name" v-model="$store.state.userName" style="font-size:16px" maxlength="8"/>
             <button class="btn" type="submit">Einloggen</button>
         </form>
       </div>

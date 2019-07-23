@@ -10,8 +10,18 @@
 
         <div id="sidebar">
           <div id="sidebarlist">
-            <div id="listTitle" class="sidebarlist"><strong>Alles korrekt beantwortet:</strong></div>
-            <div id="listContainer" class="sidebarlist">
+
+
+              <a  :class="{ disabled: !this.$store.state.victory }" href="zertifikat.jpeg" download="Gewinnerzertifikat.jpeg">
+                    <button class="answer button btn" :disabled = "!this.$store.state.victory">
+                      Gewinner-Zertifikat downloaden
+                      </button>
+              </a>
+
+
+
+            <div id="listTitleFinal" class="sidebarlist"><strong>Gewinner:</strong></div>
+            <div id="listContainerFinal" class="sidebarlist">
               <ul id="list">
                 <li v-for="userName in this.winner" :key="userName.userId">
                   {{ userName.userName }}
@@ -62,6 +72,7 @@
       },
 
       methods:{
+
         getwinneruser(){
 
           //set global Victory to truth if all answers correct

@@ -32,14 +32,23 @@ h1, p{
   margin: 0;
 }
 
-@media all and (max-width: 600px){
-  html{font-size: 1.7vw;}
+@media all and (max-width: 800px){
+  html{font-size: 1.3vw;}
 }
-@media all and (min-width: 1200px){
-  html{font-size: 18px;}
+
+@media all and (min-width: 800px){
+  html{font-size: calc(0.7vw + 1vh);}
 }
-@media all and (min-height: 1200px){
-  html{font-size: 18px;}
+
+@media screen and (orientation: portrait) {
+  orientation{
+    visibility: visible;
+  }
+}
+@media screen and (orientation: landscape) {
+  orientation{
+    visibility: hidden;
+  }
 }
 
 
@@ -58,6 +67,33 @@ h1, p{
 } */
 
 
+.orientation{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  font-size: 4vw;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+  z-index: 1;
+  visibility: hidden;
+  display: flex;
+}
+
+.orientation div{
+  display: inline-block;
+  align-self: center;
+}
+
+@media screen and (orientation: portrait) {
+  orientation{
+    visibility: visible;
+  }
+}
+@media screen and (orientation: landscape) {
+  orientation{
+    visibility: hidden;
+  }
+}
 
 #app {
   font-family: TERMINATORONE, 'Avenir', Helvetica, Arial, sans-serif;
@@ -287,6 +323,23 @@ input {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Final Titel with Button on top */
+#listTitleFinal{
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+#listContainerFinal{
+  display: flex;
+  flex-direction: column;
+  max-height: 60vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 #list{
   /* margin-top: auto;
   margin-bottom: auto; */
@@ -316,6 +369,8 @@ input {
   /* margin-top: 2vh; */
   padding-left: 2vh;
   padding-right: 2vh;
+
+
 }
 
 .titleAlone{
@@ -325,4 +380,10 @@ input {
   text-align: center;
   padding-left: 2vh;
   padding-right: 2vh;
+}
+
+/* makes a not clickable if class disable */
+a.disabled {
+  pointer-events: none;
+  cursor: default;
 }
