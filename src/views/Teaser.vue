@@ -1,15 +1,13 @@
 <template>
   <div>
-      <div id="header" style="margin-left:12.5vw;">
-        <h1 class="title">2019</h1>
+      <div id="header" style="width: 75vw;">
+        <h1 class="title">Die interaktive Live-Show!</h1>
       </div>
       <div id="sidebar">
-        <h2 id="listContainer" class="sidebarlist titleAlone" style="margin-top: 25vh;">Was</h2>
-        <h2 id="listContainer" class="sidebarlist titleAlone" >mag</h2>
-        <h2 id="listContainer" class="sidebarlist titleAlone" >das</h2>
-        <h2 id="listContainer" class="sidebarlist titleAlone" >sein</h2>
-        <h2 id="listContainer" class="sidebarlist titleAlone" >?</h2>
-
+        <h2 id="listContainer" class="sidebarlist titleAlone" style="margin-top: 25vh;">17:00</h2>
+        <h2 id="listContainer" class="sidebarlist titleAlone" style="margin-top: 10vh;" >02</h2>
+        <h2 id="listContainer" class="sidebarlist titleAlone" >08</h2>
+        <h2 id="listContainer" class="sidebarlist titleAlone" >2019</h2>
       </div>
   </div>
 </template>

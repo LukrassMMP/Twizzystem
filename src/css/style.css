@@ -349,13 +349,13 @@ input {
 }
 
 
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: green;
-}
+} */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 1000px;
-}
+} */
 
 #loginTitle{
   text-align: center;
