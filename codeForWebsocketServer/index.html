@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Twizzystem</title>
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+  </head>
+  <body>
+
+    <div id="app" class="container">
+
+
+
+      <div v-if="loggedin" class="row" id="content">
+
+        <div class="col">
+          <h1>Twizzystem</h1>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-3">
+          <form @submit.prevent="startQuiz">
+            <input class="button btn btn-info" type="submit" value="Starten & Timer"/>
+          </form>
+        </div>
+
+        <div class="col-3">
+          <form @submit.prevent="sendRedirectWithTimer">
+            <input class="button btn btn-info" type="submit" value="Weiter & Timer"/>
+          </form>
+        </div>
+
+        <div class="col-3">
+          <form @submit.prevent="sendRedirect">
+            <input class="button btn btn-info" type="submit" value="Weiter"/>
+          </form>
+        </div>
+
+        <div class="w-100"></div>
+
+        <h2 id="time">Aktueller Timer: {{currentTime}} Sekunden</h2>
+
+        <div class="w-100"></div>
+
+        <div class="col-3">
+          <form @submit.prevent="getusers">
+            <input class="button btn btn-info" type="submit" value="Liste Aktualisieren"/>
+          </form>
+        </div>
+
+        <div class="col-3">
+          <form>
+            <input class="button btn btn-success disabled" :value="'Teilnehmer: ' + this.users.length"/>
+          </form>
+        </div>
+
+        <div class="col-3">
+          <form @submit.prevent="resetTimer">
+            <input class="button btn btn-info" type="submit" value="Reset Timer"/>
+          </form>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-sm-10 col-lg-7">
+          <table id="allUsers" class="table table-striped table-bordered table" cellspacing="0">
+            <thead>
+              <tr>
+                <th class="th-sm">ID</th>
+                <th class="th-sm">Name</th>
+                <th class="th-sm">Punkte</th>
+                <th class="th-sm">Aktion</th>
+              </tr>
+            <thead>
+            <tbody>
+              <tr v-for="user in this.users" :key="user.userId">
+                <td>{{user.userId}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.correctAnswers}}</td>
+                <td><button class="btn btn-danger" v-on:click="deleteuser(user.userId)">DELETE</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        </div>
+
+
+        <!-- end app -->
+
+      <div v-else class="row" id="loginMask">
+
+          <h1>Twizzystem</h1>
+
+          <div class="w-100"></div>
+
+          <h3>Bitte melde dich an, um Twizzystem zu steuern</h3>
+
+          <div class="w-100"></div>
+
+          <form @submit.prevent="login()">
+            <input class="login loginInput" name="name" type="text" placeholder="Name" v-model="inputName"/>
+            <input class="login loginInput" name="password" type="password" placeholder="Passwort" v-model="inputPassword"/>
+
+            <div class="w-100"></div>
+
+            <button type="submit" class="login loginButton btn btn-info">Einloggen</button>
+          </form>
+
+      </div>
+
+
+
+
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+    <script>
+      var socket = null;
+      var app = new Vue({
+        el: '#app',
+        data: {
+          redirect: 'redirect',
+          start: 'start',
+          userNames: [],
+          intervall: null,
+          currentTime: 20,
+          maxTime: 20,
+          databaseUrl: 'http://www.twizzy.ch/php/data.php',
+          users: '',
+          loggedin: false,
+          inputName: '',
+          inputPassword: '',
+          userName: 'host',
+          password: '*********'
+        },
+
+        methods: {
+
+          //check username and password and sets loggedin to true (if correct)
+          login(){
+            if (this.inputName != "" && this.inputPassword != ""){
+              if (this.inputName == this.userName && this.inputPassword == this.password){
+                this.loggedin = true;
+              }else {
+                alert("Benutzername oder Passwort falsch");
+              }
+            }else{
+              alert("Bitte gib einen Benutzernamen und ein Passwort ein");
+            }
+          },
+
+          // sends start
+          startQuiz: function(){
+            socket.emit('start', this.start);
+            console.log(this.start);
+            this.startTimer();
+          },
+
+          //sends redirect
+          sendRedirect: function() {
+            socket.emit('redirect', this.redirect);
+            console.log(this.redirect);
+          },
+
+          //sends redirect and starts Timer
+          sendRedirectWithTimer: function() {
+            this.sendRedirect();
+            this.startTimer();
+          },
+
+          //gets all userNames incl. userId from Database
+          getusers(){
+
+            axios.get(this.databaseUrl, {
+              params: {
+                function: 'getusers',
+              }
+            })
+            .then(response => {
+              //handle success
+              this.users = response.data;
+            })
+            .catch(function (error) {
+              console.log(error);
+
+            });
+          },
+
+          //delete user (clicked in table)
+          deleteuser(userId){
+            //FormData including all the data for the database (userId, answerNr, answerId, correctAnswers and the function-name)
+            let formData = new FormData();
+            formData.append('userId', userId);
+            formData.append('function', 'deleteuser');
+
+            //??
+            var contact = {};
+            formData.forEach(function(currentTime, key){
+              contact[key] = currentTime;
+            });
+
+            axios({
+              method: 'post',
+              url: this.databaseUrl,
+              data: formData,
+              config: { headers: {'Content-Type': 'multipart/form-data' }},
+            })
+            .then( response => {
+              socket.emit('redirect', userId);
+              this.getusers();
+              //handle success
+              // alert("Antwort erfolgreich eingetragen")
+            })
+            .catch(function (response) {
+              //handle error
+              alert("Uh! Konnte nicht validiert werden.")
+              console.log(response)
+            });
+          },
+
+          resetTimer(){
+            clearInterval(this.interval);
+            this.currentTime = this.maxTime;
+          },
+
+          startTimer: function(){
+            this.interval = setInterval(() =>{
+              this.currentTime--;
+              if(this.currentTime == 0){
+                this.currentTime = this.maxTime;
+                socket.emit('redirect', this.redirect);
+                this.getusers();
+                clearInterval(this.interval);
+              }
+              console.log(this.currentTime);
+            }, 1000);
+          },
+
+
+        //end of methods
+        },
+        //gets loaded when the site is been visited
+        created: function() {
+          socket = io();
+          this.getusers();
+        },
+        //gets loaded after the created functions
+        mounted: function() {
+          socket.on('newuser', this.getusers);
+        },
+      })
+
+    </script>
+    <style>
+      #content{
+
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .button{
+        width: 20vw;
+        height: auto;
+        margin-bottom: 5px;
+        max-width: 150px;
+      }
+
+      #time{
+
+        margin-top: 2vh;
+
+      }
+
+      #loginMask{
+        margin-top: 5vh;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .loginInput{
+          min-width: 150px;
+          width: 20vw;
+      }
+
+      .loginButton{
+        margin-top: 1vh;
+        min-width: 100px;
+        width: 10vw;
+      }
+
+      .login{
+        height: auto;
+        padding: 10px;
+      }
+
+      input {
+        text-align: center;
+      }
+
+
+    </style>
+
+  </body>
+</html>
