@@ -7,7 +7,7 @@
            <h3 v-bind:id="'question' + $store.state.questionId"  class="question title" v-if="lastCorrectAnswer">
              Wähle die nächste Kategorie!
            </h3>
-           <h3 v-bind:id="'question' + $store.state.questionId"  class="question title" v-else>
+           <h3 v-bind:id="'question' + $store.state.questionId" class="question title" v-else>
              Nur Gewinner können wählen...
            </h3>
 

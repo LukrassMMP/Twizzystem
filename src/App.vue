@@ -2,8 +2,12 @@
 <b-container fluid id="app">
 
       <div id="video">
-        <!-- Twitch video -->
-        <iframe src="https://player.twitch.tv/?channel=twizzylivequizshow" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+        <!-- Aufzeichnung 1. Fole -->
+        <!-- <iframe src="https://player.twitch.tv/?channel=twizzylivequizshow" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe> -->
+
+        <iframe  src="https://www.youtube.com/embed/Wh7pyCke-vo" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Twitch Live-Video -->
+        <!-- <iframe src="https://player.twitch.tv/?channel=twizzylivequizshow" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe> -->
 
         <!-- <iframe src="https://player.twitch.tv/?channel=esl_csgo" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe> -->
 

@@ -1,13 +1,37 @@
 <template>
   <div>
       <div id="header" style="width: 75vw;">
-        <h1 class="title">Die interaktive Live-Show!</h1>
+        <h1 class="title">Danke fürs mitmachen!</h1>
+        <h2 class="title">See you next time!</h2>
       </div>
       <div id="sidebar">
-        <h2 id="listContainer" class="sidebarlist titleAlone" style="margin-top: 25vh;">17:00</h2>
-        <h2 id="listContainer" class="sidebarlist titleAlone" style="margin-top: 10vh;" >02</h2>
-        <h2 id="listContainer" class="sidebarlist titleAlone" >08</h2>
-        <h2 id="listContainer" class="sidebarlist titleAlone" >2019</h2>
+        <!-- hidden button to center buttons -->
+        <button  class="categorie btn hidden diabled"></button>
+
+
+        <a href="https://www.instagram.com/twizzy_show/">
+        <button  id="categorie1"
+                    class ="categorie btn">
+                    Instagram
+            </button>
+          </a>
+
+          <a href="https://www.facebook.com/twizzyquiz/">
+          <button id="categorie2"
+                      class ="categorie btn">
+                    Facebook
+
+          </button>
+          </a>
+      </div>
+
+
+
+
+
+      <div id="sidebar">
+
+
       </div>
   </div>
 </template>

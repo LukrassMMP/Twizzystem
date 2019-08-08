@@ -3,7 +3,7 @@
 ## Beschreibung
 
 Das Interaktionssystem "Twizzystem" wurde im Rahmen meiner Bachelorarbeit des Studiengangs "Multimedia-Production" an der HTW Chur erstellt. Es dienst als Interaktionssystem hinter dem, ebenfalls für die Bachelorarbeit erstellten, Live-Quiz namens "Twizzy".
-Das System soll eine möglichst einfache, intuitive Interaktion bieten, um mit einem per Streaming-Dienst übertragenen Live-Show zu interagieren. Die Nutzer/Zuschauer bleiben dabei stets anonym und können das System geräteunabhängig nutzen.
+Das System soll eine möglichst einfache, intuitive Interaktion bieten, um mit einer per Streaming-Dienst übertragenen Live-Show zu interagieren. Die Nutzer/Zuschauer bleiben dabei stets anonym und können das System geräteunabhängig nutzen.
 
 ## Konzeption & Testing
 
@@ -85,7 +85,7 @@ Nun funktionierte Autoplay auf dem Notebook ohne Probleme. Nur leider nicht auf 
 Nun lief soweit alles wie gewünscht. Getestet wurde jedoch nur mit bestehenden Youtube Live Videos anderer Streamer oder mit eigens Hochgeladenen (nicht live) Videos. Als das Live-Video getestet werden wollte, wurde ich mit dem nächsten Fehler konfrontiert: Der Besitzer des Videos hat das Einbetten dieses Videos blockiert! Ok, sicherlich kein Problem, nur eine Einstellung auf dem Kanal. Schnell war die Einstellung auch gefunden, nur leider konnte sie nicht aktiviert/erlaubt werden. Nach einigen Recherchen wurde klar: der Youtube-Kanal muss mit einem Google AdSense-Konto verknüpft sein, um das Einbetten von Live-Videos zu gestatten. Dafür wiederum muss der Kanal monetarisiert sein (fürs Schalten von Werbung zugelassen). Diese Monetarisierung hat folgende Voraussetzungen:
 >Du kannst die Monetarisierung jederzeit beantragen. Um zur Überprüfung zugelassen zu werden, sind für alle Kanäle mindestens eine Wiedergabezeit von 4.000 Stunden in den vergangenen zwölf Monaten und 1.000 Abonnenten erforderlich. Diese Bedingung ermöglicht die genaue Beurteilung neuer Kanäle und hilft dabei, die YouTuber-Community zu schützen.
 
-Somit war Youtube Live als Plattform definitiv aus dem Rennen. 
+Somit war Youtube Live als Plattform definitiv aus dem Rennen.
 #### Verbindung zur Datenbank mit Vue.js
 Das Arbeiten mit Vue.js macht sehr viel Spass - sofern man die Syntax verstanden hat. Doch dank der hilfreichen und umfangreichen Dokumentation fällt die einarbeit meist ziemlich gut. Bei der Kommunikation mit der Datenbank hatte ich zuerst Probleme. Schnell war mir klar, dass ich dafür Axios einsetzen muss, jedoch gelang dies mit nicht auf Anhieb.
 Dank [dieses Tutorials](https://www.techiediaries.com/vuejs-php-mysql-rest-crud-api-tutorial/) habe ich dann das System/die Syntax dann doch noch verstanden und konnte die Datenbankverbindung einrichten.

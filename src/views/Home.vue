@@ -6,8 +6,8 @@
 
 
       <div id="header">
-        <h1 class="titleAlone">02.08.2019</h1>
-        <h1>17:00 Uhr</h1>
+        <h1 class="titleAlone">Istagram: twizzy_show</h1>
+        <h1>Facebook: Twizzy</h1>
       </div>
 
       <div id="sidebar">
