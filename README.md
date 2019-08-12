@@ -92,18 +92,18 @@ Für die Umsetzung und die Einrichtung einer Testumgebung wurden hauptsächlich 
 Grundsätzlich besteht Twizzystem aus zwei Webseiten: eine für die Zuschauer [twizzy.ch](twizzy.ch) und eine für den Host [twizzy.herokuapp.com](twizzy.herokuapp.com).
 
 ### twizzy.ch
-[![](/images/home.png)]
+![](/images/home.png)<br>
 
 Twizzy.ch ist die Webseite, auf welcher das Live-Quiz durchgeführt wird. Die Zuschauer besuchen die Seite und können sich einloggen (anonym). In der Ecke unten links wird automatisch der Live-Stream von Twitch gestartet. Alle Interaktionenmöglichkeiten werden nun automatisch durch den Quizbetreiber ausgelöst.
 
 ### twizzy.herokuapp.com
-[![](/images/twizzystem.png)]
+![](/images/twizzystem.png)<br>
 Auf twizzy.herokuapp.com befindet sich das Herzstück des Interaktionssystems. Nach dem Einloggen (BN & PW auf USB-Stick*) ist es hier für den Quizbetreiber möglich, die Interaktionen auf der Website twizzy.ch zu steuern. Es ist möglich die Show zu starten und weiterzuleiten (mit oder ohne automatischen Timer). Zudem wird, besonders wichtig für den Moderator, die Liste aller Teilnehmer und ihre Punktzahl angezeigt. Jeder einzelne dieser Teilnehmer kann durch den Host gelöscht werden (je nach Namenswahl nötig).
 
 ### Zusammenspiel der beiden Systeme
 Wie funktioniert nun das Zusammenspiel dieser beiden Webseiten. Zu Beginn kann sich jeder Zuschauer mit einem beliebigen Namen einloggen. Nach dem Login werden ihm alle Namen der eingeloggten Teilnehmer angezeigt. Der Moderator begrüsst die Teilnehmer, erklärt die Show und überbrückt die Zeit, bis die erste Frage gestartet werden kann.
 
-[![](/images/login.png)]
+![](/images/login.png)<br>
 
 Gestartet wird das Quiz durch den Host via twizzy.herokuapp.com: Ein Klick auf den Button «Starten & Timer» startet die Show und damit die erste Frage. Automatisch startet zugleich der 20s-Timer, welcher die Frage nach Ablauf der Zeit schliesst und das Resultat bei allen Teilnehmern anzeigen lässt. Sobald der Zuschauer eine Frage ausgewählt hat, werden ihm die Stimmen aller anderen Teilnehmer angezeigt (Antwortwechsel natürlich nicht mehr möglich). Nach Ablauf der 20s wird die Frage automatisch aufgelöst und je nach Abstimmung werden den Teilnehmern unterschiedliche Meldungen (inkl. Jingle) angezeigt (Erfolg oder Misserfolg).
 
@@ -111,20 +111,20 @@ Gestartet wird das Quiz durch den Host via twizzy.herokuapp.com: Ein Klick auf d
 
 Damit die Kategorie-Auswahl startet, muss der Host wiederum den Startschuss geben. Auch hier, wie bei der Frage, läuft automatisch ein 20s-Timer, welcher die Auswahl nach Ablauf der Zeit wieder schliesst. Es folgen fünf weiter Fragen und Kategorie-Auswahlen nach demselben Schema. Am Ende werden alle Sieger der Show aufgelistet, welche ein Gewinnerzertifikat downloaden können, gefolgt von der Wahl des Themas der nächsten Show.
 
-[![](/images/winner.png)]
+![](/images/winner.png)<br>
 
 ### Datenbank
 Die für das Quiz nötigen Daten werden zentral auf einer Datenbank abgelegt. Für jeden Nutzer, welcher sich einloggt, wird ein neuer Eintrag in der user-Tabelle erstellt. Neben dem Namen werden darin auch die gegebenen Antworten und die gesammelten Punkte (correctAnswers) gesammelt.
 Jede Frage (Question) gehört zu einer bestimmten Kategorie (Categorie), welche wiederum zu einem bestimmten Oberthema (Topic) gehört. Der Eintrag «correctAnswer» der Question-Tabelle hilft dabei, die korrekte Antwort zu identifizieren (answerA, B, C oder D). Die Abgegebenen Stimmen bei der Kategoriewahl und der Themenwahl werden unter categorieVotes und topicVotes gespeichert.
 [Link zur Datenbankstruktur](https://app.quickdatabasediagrams.com/#/d/zdMG2u)
-[![](/images/datenbank.png)]
+![](/images/datenbank.png)<br>
 
 
 ## Unsere erste Folge
 Am 02.08.2019 um 17:00 Uhr war es soweit: die Pilotfolge von Twizzy ging über die Bühne. Remo Krapf konnte für die Moderation unseren Kommilitonen Ricardo Fariña gewinnen. Nach einem Testdurchlauf am 31.08.2019 war alles bereit für die Show. In einer Social Media Kampagne auf [Instagram](https://www.instagram.com/twizzy_show/) und [Facebook](https://www.facebook.com/twizzyquiz/) (von Remo Krapf durchgeführt) wurde Twizzy angekündigt.
 Remo Krapf und ich sassen in der Regie, Riacrdo Fariña stand vor der Kamera. Die Aufgabenverteilung war klar: Remo kümmerte sich um den Live-Stream/das Video (er arbeitete mit der Streaming-Software OBS) und ich mich um das Interaktionssystem. Ricardo Fariña konnte auf zwei Bildschirmen neben der Kamera die für ihn nötigen Informationen ablesen (Fragen, Kategorien, Teilnehmer usw.).
 
-[![](/images/twizzyStudio.png)]
+![](/images/twizzyStudio.png)<br>
 
 Kurz vor 17:00 Uhr waren bereit über 30 Teilnehmer angemeldet. Pünktlich startete der Countdown und es hiess: «Ich heiss öi ganz herzlich willkomme zu Twizzy, öire nöie Lieblings-Live-Quiz-Show!». Während Ricardo die Leute begrüsste und die Show erklärte, kamen noch weitere Zuschauer hinzu. Beim Start der ersten Frage belief sich die Anzahl an eingeloggten Nutzern auf über 40. Ricardo leitete die Frage gekonnt ein, Remo blendete das entsprechende Video ein und ich löste die Frage bei den Zuschauern aus. Und siehe da, die Stimmen trudelten eine nach der anderen ein. Alles lief wie geplant und die Show ging ohne grössere Probleme über die Bühne. Am Ende haben es sogar drei Teilnehmer (vier inkl. mir selbst) geschafft, alle sechs Fragen richtig zu beantworten. Gemeinsam wählten sie Musik als Oberthema der nächsten Twizzy-Folge. Wir hoffen, die lässt nicht allzu lange auf sich warten…
 <br><br>
