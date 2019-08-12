@@ -116,7 +116,7 @@ Damit die Kategorie-Auswahl startet, muss der Host wiederum den Startschuss gebe
 ### Datenbank
 Die für das Quiz nötigen Daten werden zentral auf einer Datenbank abgelegt. Für jeden Nutzer, welcher sich einloggt, wird ein neuer Eintrag in der user-Tabelle erstellt. Neben dem Namen werden darin auch die gegebenen Antworten und die gesammelten Punkte (correctAnswers) gesammelt.
 Jede Frage (Question) gehört zu einer bestimmten Kategorie (Categorie), welche wiederum zu einem bestimmten Oberthema (Topic) gehört. Der Eintrag «correctAnswer» der Question-Tabelle hilft dabei, die korrekte Antwort zu identifizieren (answerA, B, C oder D). Die Abgegebenen Stimmen bei der Kategoriewahl und der Themenwahl werden unter categorieVotes und topicVotes gespeichert.
-[Link zur Datenbankstruktur](https://app.quickdatabasediagrams.com/#/d/zdMG2u)
+[Link zur Datenbankstruktur](https://app.quickdatabasediagrams.com/#/d/zdMG2u) <br>
 ![](/images/datenbank.png)<br>
 
 
