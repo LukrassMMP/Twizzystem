@@ -1,11 +1,11 @@
-# Interaktionssystem "Twizzystem"
+# Dokumentation zur Live-Quizshow "Twizzy"
 
-## Beschreibung
-
-Das Interaktionssystem "Twizzystem" wurde im Rahmen meiner Bachelorarbeit des Studiengangs "Multimedia-Production" an der HTW Chur erstellt. Es dienst als Interaktionssystem hinter dem, ebenfalls für die Bachelorarbeit erstellten, Live-Quiz namens "Twizzy".
-Das System soll eine möglichst einfache, intuitive Interaktion bieten, um mit einer per Streaming-Dienst übertragenen Live-Show zu interagieren. Die Nutzer/Zuschauer bleiben dabei stets anonym und können das System geräteunabhängig nutzen.
+## Einleitung
+Die interaktive Live-Quizshow "Twizzy" wurde im Rahmen meiner Bachelorarbeit des Studiengangs "Multimedia Production" an der HTW Chur konzipiert und durchgeführt. Das Projekt wurde zusammen mit meinem Kommilitonen Remo Krapf durchgeführt. Meine Hauptaufgabe dabei war das Programmieren der Website inkl. des Interaktionssystems. Dieses für die Live-Show entwickelte System taufte ich «Twizzystem».
+Twizzystem soll eine möglichst einfache, intuitive Interaktion bieten, um mit einer per Streaming-Dienst übertragenen Live-Show zu interagieren. Die Nutzer/Zuschauer bleiben dabei stets anonym und können das System geräteunabhängig nutzen.
 
 ## Konzeption & Testing
+In meiner Bachelorthesis untersuche ich den Stellenwert von Live-Shows in der heutigen, digitalen Medienwelt und welche Interaktionsmöglichkeiten diese bieten. Ich führte einerseits Experteninterviews wie auch eine Onlineumfrage durch. Dabei konnte ich wichtige Erkenntnisse sammeln, welche in die Planung von Twizzystem einflossen.
 
 ### Experteninterview
 Um die Anforderungen an ein Interaktionssystem für eine Live-Show zu bestimmen, wurden im Rahmen der Bachelorarbeit einige Experteninterviews durchgeführt. Aus diesen Experteninterviews konnten erste Erkenntnisse gezogen werden:
@@ -20,7 +20,7 @@ Um die Anforderungen an ein Interaktionssystem für eine Live-Show zu bestimmen,
   <br>_Reto Peritz - SRF, Bereichsleiter Show "Jugend | Familie | Unterhaltung"_
 
 ### Umfrage
-Zusatzlich zu den Experteninterviews wurde eine Umfrage durchgeführt, welche von über 120 Teilnehmern ausgefüllt wurde. Die Auswertung bestätigte die Aussagen der Experten, zudem konnten noch weitere Anforderungen bestimmt werden:
+Zusätzlich zu den Experteninterviews wurde eine Onine-Umfrage durchgeführt, welche von über 120 Teilnehmern ausgefüllt wurde. Die Auswertung bestätigte die Aussagen der Experten, zudem konnten noch weitere Anforderungen bestimmt werden:
 * __Anonym__
   > "Anonymisiertes Interagieren. Würde niemals FB, Insta oder gar meine Nt.-Nummer dafür verwenden wollen"
   <br>_anonymer Teilnehmer/anonyme Teilnehmerin_
