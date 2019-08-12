@@ -34,7 +34,7 @@ Zusätzlich zu den Experteninterviews wurde eine Onine-Umfrage durchgeführt, we
 ### Show-Konzept
 Der Name Twizzy setzt sich zusammen aus «Thema», «swiss» und «Quiz» (das «y» lässt das Ganze noch etwas verspielter wirken). Es ist dementsprechend eine themenbasierte, interaktive Live-Quiz-Show. Die Show wird auf einer Website mit Interaktionsfunktionen und eingebettetem Live-Stream stattfinden. Ein Moderator leitet dabei die Zuschauer durch die Show.
 Jede einzelne Folge steht unter einem Oberthema, wovon jeweils 6 Fragen aus verschiedenen Unterkategorien gestellt werden. Jeder Teilnehmer hat die Möglichkeit bei jeder dieser Fragen mit abzustimmen. Nach Beantwortung jeder Frage können die jeweiligen Sieger über die Kategorie der nächsten Frage abstimmen. Die Frage selbst kann aber dann wieder von allen Teilnehmern beantwortet werden. Nach Abschluss der 6 Fragen werden alle Teilnehmer belohnt, welche alle Fragen korrekt beantwortet haben. Ihr Belohnung beinhaltet ein Gewinnerzertifikat (Download) und die Möglichkeit, über das Oberthema der nächsten Show abzustimmen.
-[![](/images/konzept.png)]
+![](/images/konzept.png)<br>
 
 ### Wireframe
 Um nicht direkt mit der erst besten Idee loszulegen, wurden diverse Entwürfe getestet. Anfänglich nur auf Papier, später mithilfe von Adobe XD. Zwei Entwürfe wurden als Wireframe umgesetzt und zu Testzwecken verbreitet. Mit Klick (bei gedrückter "CMD"- oder "Ctrl"-Taste) auf die Bilder kann das Wireframe geöffnet werden.<br>
@@ -107,7 +107,7 @@ Wie funktioniert nun das Zusammenspiel dieser beiden Webseiten. Zu Beginn kann s
 
 Gestartet wird das Quiz durch den Host via twizzy.herokuapp.com: Ein Klick auf den Button «Starten & Timer» startet die Show und damit die erste Frage. Automatisch startet zugleich der 20s-Timer, welcher die Frage nach Ablauf der Zeit schliesst und das Resultat bei allen Teilnehmern anzeigen lässt. Sobald der Zuschauer eine Frage ausgewählt hat, werden ihm die Stimmen aller anderen Teilnehmer angezeigt (Antwortwechsel natürlich nicht mehr möglich). Nach Ablauf der 20s wird die Frage automatisch aufgelöst und je nach Abstimmung werden den Teilnehmern unterschiedliche Meldungen (inkl. Jingle) angezeigt (Erfolg oder Misserfolg).
 
-[![](/images/interaktion.png)]
+![](/images/interaktion.png)<br>
 
 Damit die Kategorie-Auswahl startet, muss der Host wiederum den Startschuss geben. Auch hier, wie bei der Frage, läuft automatisch ein 20s-Timer, welcher die Auswahl nach Ablauf der Zeit wieder schliesst. Es folgen fünf weiter Fragen und Kategorie-Auswahlen nach demselben Schema. Am Ende werden alle Sieger der Show aufgelistet, welche ein Gewinnerzertifikat downloaden können, gefolgt von der Wahl des Themas der nächsten Show.
 
